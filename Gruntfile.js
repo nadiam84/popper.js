@@ -55,12 +55,65 @@ module.exports = function(grunt) {
             options: {
                 frameworks: ['jasmine'],
                 singleRun: true,
+                browserStack: {
+                    username: process.env.BROWSERSTACK_USERNAME,
+                    accessKey: process.env.BROWSERSTACK_KEY,
+                },
                 browsers: browsers,
                 customLaunchers: {
                     'ChromeTest': {
                         base: 'Chrome',
                         flags: ['--window-size=800,872'] // 800x800 plus karma shell
-                    }
+                    },
+                    'bs_firefox_mac': {
+                        base: 'BrowserStack',
+                        browser: 'firefox',
+                        browser_version: 'latest',
+                        os: 'OS X',
+                        os_version: 'El Capitan'
+                    },
+                    'bs_chrome_mac': {
+                        base: 'BrowserStack',
+                        browser: 'chrome',
+                        browser_version: 'latest',
+                        os: 'OS X',
+                        os_version: 'El Capitan'
+                    },
+                    'bs_safari_mac': {
+                        base: 'BrowserStack',
+                        browser: 'safari',
+                        browser_version: 'latest',
+                        os: 'OS X',
+                        os_version: 'El Capitan'
+                    },
+                    'bs_ie11_win': {
+                        base: 'BrowserStack',
+                        browser: 'ie',
+                        browser_version: '11',
+                        os: 'Windows',
+                        os_version: '10'
+                    },
+                    'bs_ie10_win': {
+                        base: 'BrowserStack',
+                        browser: 'ie',
+                        browser_version: '10',
+                        os: 'Windows',
+                        os_version: '7'
+                    },
+                    'bs_ie9_win': {
+                        base: 'BrowserStack',
+                        browser: 'ie',
+                        browser_version: '9',
+                        os: 'Windows',
+                        os_version: '7'
+                    },
+                    'bs_edge_win': {
+                        base: 'BrowserStack',
+                        browser: 'edge',
+                        browser_version: 'latest',
+                        os: 'Windows',
+                        os_version: '10'
+                    },
                 },
                 files: [
                     { pattern: 'bower_components/**/*.js', included: false },
@@ -107,7 +160,7 @@ module.exports = function(grunt) {
             xvfb: {
                 DISPLAY: ':99'
             }
-        }
+        },
     });
 
     grunt.registerTask('doc', ['jsdoc']);
