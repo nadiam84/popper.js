@@ -53,6 +53,10 @@ module.exports = function(grunt) {
         },
         karma: {
             options: {
+                captureTimeout: 3e5,
+                browserNoActivityTimeout: 3e5,
+                browserDisconnectTimeout: 3e5,
+                browserDisconnectTolerance: 3,
                 frameworks: ['jasmine'],
                 singleRun: true,
                 browserStack: {
