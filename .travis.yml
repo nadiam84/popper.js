@@ -4,7 +4,9 @@ before_script:
   - sudo apt-get install -y chromium-browser xvfb
   - npm install -g grunt-cli bower
   - bower install
-script: grunt test-ci
+script:
+  - grunt test-ci
+  - npm run test:bs
 env:
   global:
   - secure: jetSu3cHjattuT5WKsOO/8CH8xUbSMaQQbMOUOgk+1n2TPzkWWxgk11YfBZFXzVpuHKqAD/xKZBRugWuTELesiaDV1uvOyRvnZ8a2QRKKcgAmPNEJ9kdEp8y33YMAHEXB2WJ8l5NUmCeyHt2siFuGS3XmiGfYLAGVX3FmbuCScjTMH+Yo5z5wX5gesN3qJ1mDAd+3MDZKT9Eo5uPHdTfbuO6PvG8vcsC8rpe3AXsv9CIG1WL+XQH8/oFryeZeG22wImiTvr+Wd/rAbSzCvLBd10Zg5u4IGGeRBnf0z1haLYhXaT8anmdaa+fdjtojf9G9jD2UrJQwNvzi304Ofck/tblvx8X+uGNeYOX57YsWewCkANqFJOy/jEuTp27aXnCVLRcpa4P4ppJmEpHV/866krZPNER/SqG9S8DulYYqaQAunf7Rck6PMlauMhw3m3Nb06I77j1Ybbln+N8Bb5jzz241dvABM6BPXqiZ+/taVDi2tl+JyK/opVu6OOfuSQ3xd4kLIqDocLh78hAHuYx2YI2M3oznEYRVrlqgMBVMiJGpk4L4E9p/rz4xUZIj6sifRpxmFZGK6OlNHqIlU+4wjuL+XFjvm2hf4C5SA36F5nCU684cddS76ngTOAY3MWhw6YeDH8ZUwQQCbErkk8m5EyR3MC11ylkaXrw4E0Zdjo=
