@@ -1,10 +1,7 @@
 language: node_js
+node_js: 6.2
+before_script: npm install -g grunt-cli
+script: grunt test-ci --browsers=SLChrome,SLFirefox,SLEdge,SLSafari,SLInternetExplorer10,SLInternetExplorer11
 
-node_js: 5.9.1
-
-before_script:
-    - sudo apt-get install -y chromium-browser xvfb
-    - npm install -g grunt-cli bower
-    - bower install
-
-script: grunt test-ci
+addons:
+  sauce_connect: true
